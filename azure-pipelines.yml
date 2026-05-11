@@ -9,13 +9,13 @@ stages:
   jobs:
     - job: BuildJob
       steps:
-        - script: echo"Building Application"
+        - script: echo "Building Application"
           displayName: Build Step
 - stage: Deploy
   jobs:
     - job: DeployJob
       steps:
-        - script: echo"Deploying Application"
+        - script: echo "Deploying Application"
           displayName: Deploy Setp
 
 
