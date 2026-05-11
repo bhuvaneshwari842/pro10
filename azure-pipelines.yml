@@ -4,15 +4,20 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: Maven@4
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'package'
-    publishJUnitResults: false
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '17'
-    mavenVersionOption: 'Default'
+stages:
+- stage: Build
+  jobs:
+    - job: BuildJob
+      steps:
+        - script: echo"Building Application"
+          displayName: Build Step
+- stage: Deploy
+  jobs:
+    - job: DeployJob
+      steps:
+        - script: echo"Deploying Application"
+          displayName: Deploy Setp
+
 
 
 
